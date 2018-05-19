@@ -1,0 +1,31 @@
+{
+  "name": "Wild Unknown",
+  "description": "A Spinning Tales boilerplate.",
+  "version": "1.0.0",
+  "keywords": [
+    "css",
+    "js",
+    "sass",
+    "responsive",
+    "front-end",
+    "framework",
+    "web",
+    "wordpress"
+  ],
+  "homepage": "https://github.com/allisonplus",
+  "main": [
+    "sass/style.scss",
+    "style.css"
+  ],
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt",
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}

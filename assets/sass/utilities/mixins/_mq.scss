@@ -1,0 +1,27 @@
+//--------------------------------------------------------------
+// MEDIA QUERIES
+//--------------------------------------------------------------
+/// Pass Sass Variable(s) to create custom media queries.
+///
+/// @example - scss  Usage
+///   @include media(null, $tablet-portrait) {};
+///
+/// @example - css Output
+///   @media and screen (max-width: $tablet-portrait)
+@mixin media($min, $max:null) {
+
+	// Create the media query.
+	@if $min == null {
+		@media only screen and (max-width: $max) {
+			@content;
+		}
+	} @else if $max == null {
+		@media only screen and (min-width: $min) {
+			@content;
+		}
+	} @else {
+		@media only screen and (min-width: $min) and (max-width: $max) {
+			@content;
+		}
+	}
+}
