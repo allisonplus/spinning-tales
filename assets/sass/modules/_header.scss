@@ -25,6 +25,7 @@
 	background-image: url("assets/images/stock.jpeg");
 	background-size: cover;
 	box-sizing: border-box;
+	position: relative;
 	z-index: 1;
 
 	@include media($tablet-landscape) {
@@ -36,21 +37,18 @@
 		z-index: 1;
 	}
 
+	// Gradient overlay.
 	&:after {
+		@include position(absolute, 0 0 null null);
 		@include size(100% 100%);
-		@include position(absolute, 0 0 0 0);
 
 		background-color: $turq;
-		background-image: linear-gradient(19deg, $violet 0%, $turq 100%);
+		background-image: linear-gradient(18deg, $violet 0%, $turq 100%);
 		content: "";
+		display: block;
 		opacity: 0.3;
 		z-index: 2;
-
-		@include media($tablet-landscape) {
-			@include size(100%);
-		}
-
-	}
+	} // gradient overlay
 } // .site-header
 
 .site-content {
@@ -61,4 +59,4 @@
 	@include media($tablet-landscape) {
 		padding-left: calc(#{$header} + 2%);
 	}
-}
+} // .site-content

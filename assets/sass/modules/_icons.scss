@@ -7,7 +7,9 @@
 	justify-content: center;
 	margin: 0;
 	padding: $gutter 0 0;
+	position: relative;
 	width: 100%;
+	z-index: 3;
 
 	li {
 		display: inline-block;

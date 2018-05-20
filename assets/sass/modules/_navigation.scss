@@ -43,9 +43,10 @@ a {
 } // a
 
 // Default menu (active after a fresh WordPress install)
-
 .menu {
-	@include list-reset;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 
 	li {
 		margin: 0 10px 0 0;
@@ -69,64 +70,10 @@ a {
 		}
 
 		a {
-			border-bottom: 1px solid $color-background-hr;
 			padding: 10px;
-		}
-	}
 
-	&.dropdown {
-
-		// Sub-menu
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			left: -999px;
-			position: absolute;
-			top: 24px;
-			z-index: 99999;
-
-			// Sub-sub menu
-			ul {
-				left: -999px;
-				top: 0;
-			}
-
-			// Sub-menu items
-			li {
-
-				&:hover > ul,
-				&.focus > ul {
-					left: 100%;
-				}
-			}
-
-			// Sub-menu links
-			a {
-				@include size(200px auto);
-			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
-			}
-		}
-
-		// Display sub-menu on hover
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
-		}
-
-		// Menu items
-		li {
-			float: left;
-			position: relative;
-
-			&:hover > a,
-			&.focus > a {
+			@include media($tablet-landscape) {
+				border-bottom: 1px solid $color-background-hr;
 			}
 		}
 	}
@@ -145,10 +92,7 @@ a {
 
 // Main navigation (after creating a menu in the dashboard)
 .main-navigation {
-	@include size(100% auto);
-
 	clear: both;
-	display: none;
 	float: left;
 	z-index: 3;
 
@@ -158,17 +102,15 @@ a {
 
 	// Menu area
 	ul {
-		display: none;
+		display: flex;
+		justify-content: space-evenly;
 
-		@include media($phone-landscape) {
+		@include media($tablet-landscape) {
 			display: block;
+			text-align: center;
 		}
 	}
-
-	&.toggled ul {
-		display: block;
-	}
-}
+} // .main-navigation
 
 // Small menu
 .menu-toggle {

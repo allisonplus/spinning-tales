@@ -25,8 +25,6 @@
 	</footer><!-- .site-footer -->
 </div><!-- #page -->
 
-<?php cps_do_mobile_navigation_menu(); ?>
-
 <?php wp_footer(); ?>
 
 </body>

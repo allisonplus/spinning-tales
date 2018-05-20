@@ -36,11 +36,6 @@
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php else : ?>
 					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php endif;
-
-				$description = get_bloginfo( 'description', 'display' );
-				if ( $description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 				<?php endif; ?>
 			</div><!-- .site-branding -->
 
@@ -49,10 +44,12 @@
 					wp_nav_menu( array(
 						'theme_location' => 'primary',
 						'menu_id'        => 'primary-menu',
-						'menu_class'     => 'menu dropdown'
+						'menu_class'     => 'menu menu-vertical main-menu',
 					) );
 				?>
+
 			</nav><!-- #site-navigation -->
+			<?php echo cps_get_social_links(); // WPCS: XSS OK. ?>
 
 		</div><!-- .wrap -->
 	</header><!-- #masthead -->
