@@ -59,7 +59,7 @@ if ( ! function_exists( 'cps_entry_footer' ) ) :
 			}
 		}
 
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+		if ( ! is_front_page() && ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
 			comments_popup_link( esc_html__( 'Leave a comment', 'spin' ), esc_html__( '1 Comment', 'spin' ), esc_html__( '% Comments', 'spin' ) );
 			echo '</span>';
@@ -337,7 +337,7 @@ function cps_do_copyright_text() {
 	}
 
 	// Echo the text.
-	echo '<span class="copyright-text">	&#169;' . date( 'Y' ) . ' ' . wp_kses_post( $copyright_text ) . '</span>'; // WPCS: XSS OK.
+	echo '<span class="copyright-text">&#169; ' . date( 'Y' ) . ' ' . wp_kses_post( $copyright_text ) . '</span>'; // WPCS: XSS OK.
 }
 
 /**
@@ -425,7 +425,7 @@ function cps_do_mobile_navigation_menu() {
 /**
  * Social links for the footer.
  */
-function cps_get_footer_social_links() {
+function cps_get_social_links() {
 
 	// Set an array of social networks.
 	$social_networks = array( 'twitter', 'facebook', 'instagram' );
@@ -440,7 +440,7 @@ function cps_get_footer_social_links() {
 	<?php if ( ! empty( $email ) ) : ?>
 		<li class="social-network email">
 			<a href="mailto:<?php echo esc_attr( $email ); ?>">
-				<img src="<?php echo esc_url( $icon_email ); ?>" alt="">
+				<?php echo cps_get_svg( array( 'icon' => 'social-envelope', '' ) ); // WPCS: XSS OK. ?>
 			</a>
 		</li>
 	<?php endif; ?>
@@ -453,7 +453,9 @@ function cps_get_footer_social_links() {
 		<?php if ( ! empty( $link_value ) ) : ?>
 		<li class="social-network <?php echo $network; // WPCS: XSS OK. ?>">
 			<a target="_blank" href="<?php echo esc_url( get_theme_mod( 'cps_' . $network . '_link' ) ); ?>">
-				<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/svg-icons/social-' . $network . '.svg' ); ?>" alt="">
+				<a href="<?php echo esc_url( get_theme_mod( 'cps_' . $network . '_link' ) ); ?>">
+					<?php echo cps_get_svg( array( 'icon' => 'social-' . $network, 'title' => $network . '' ) ); // WPCS: XSS OK. ?>
+				</a>
 			</a>
 		</li>
 		<?php endif; ?>

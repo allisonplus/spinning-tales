@@ -19,18 +19,18 @@ function cps_font_url() {
 	 * supported by the following, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$roboto = _x( 'on', 'Roboto font: on or off', 'spin' );
+	$volkhov = _x( 'on', 'Volkhov font: on or off', 'spin' );
 	$open_sans = _x( 'on', 'Open Sans font: on or off', 'spin' );
 
-	if ( 'off' !== $roboto || 'off' !== $open_sans ) {
+	if ( 'off' !== $volkhov || 'off' !== $open_sans ) {
 		$font_families = array();
 
-		if ( 'off' !== $roboto ) {
-			$font_families[] = 'Roboto:400,700';
+		if ( 'off' !== $volkhov ) {
+			$font_families[] = 'Volkhov:400,700';
 		}
 
 		if ( 'off' !== $open_sans ) {
-			$font_families[] = 'Open Sans:400,300,700';
+			$font_families[] = 'Open+Sans:400,600i';
 		}
 
 		$query_args = array(
@@ -38,6 +38,8 @@ function cps_font_url() {
 		);
 
 		$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
+
+		// <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600i|Volkhov:400,700" rel="stylesheet">
 	}
 
 	return $fonts_url;

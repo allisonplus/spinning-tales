@@ -10,18 +10,14 @@
  */
 
 ?>
-
 	</div><!-- #content -->
 
 	<footer class="site-footer">
 		<div class="wrap">
-
-			<?php echo cps_get_footer_social_links(); // WPCS: XSS OK. ?>
-
 			<div class="site-info">
 				<?php
-					cps_do_copyright_text();
 					cps_do_build_text();
+					cps_do_copyright_text();
 				?>
 			</div>
 
