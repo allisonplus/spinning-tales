@@ -14,9 +14,22 @@ textarea {
 
 // Headers
 
+// Loop through headings for common styles.
+@function headings($from: 1, $to: 6) {
+	@if $from == $to {
+		@return "h#{$from}, .h#{$from}";
+	} @else {
+		@return "h#{$from}, .h#{$from}," + headings($from + 1, $to);
+	}
+}
+
+// Output headings.
+#{headings(1, 6)} {
+	font-family: $font-serif;
+} // #{headings(1, 6)}
+
 h1,
 .h1 {
-
 }
 
 h2,
@@ -62,7 +75,7 @@ i {
 	font-style: italic;
 }
 
-blockquote,
+
 q {
 	margin: 0 24px;
 	quotes: "" "";
@@ -72,6 +85,38 @@ q {
 		content: "";
 	}
 }
+
+blockquote {
+	background: rgba($turq, 0.08);
+	color: $void;
+	font-style: italic;
+	margin: 1rem auto 2rem;
+	padding: 1rem 1.2rem;
+	position: relative;
+	text-align: center;
+	width: 75%;
+
+	&:before,
+	&:after {
+		color: $color-alto;
+		font-family: FontAwesome;
+		font-size: 34px;
+		position: absolute;
+		top: $gutter;
+	}
+
+	&:before {
+		content: "\f10d";
+		margin-right: $gutter * 2;
+		right: 100%;
+	}
+
+	&:after {
+		content: "\f10e";
+		left: 100%;
+		margin-left: $gutter * 2;
+	}
+} // blockquote
 
 address {
 	margin: 0 0 24px 0;

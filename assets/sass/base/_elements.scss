@@ -26,7 +26,7 @@ figure {
 
 ul,
 ol {
-	margin: 0 0 48px 24px;
+	margin: 0 0 28px 24px;
 }
 
 ul {
@@ -50,14 +50,30 @@ dd {
 	margin: 0 24px 24px 0;
 }
 
-// Tables
-
+// Tables.
 table {
 	@include size(100% auto);
 
+	border: 1px solid $void;
 	margin: 0 0 24px;
 }
 
+tr {
+	border-bottom: 1px solid $void;
+}
+
 th {
+	background: $void;
+	color: $color-white;
 	font-weight: 700;
+}
+
+td,
+th {
+	padding: 4px 10px;
+}
+
+
+table tr:nth-child(even) {
+    background-color: $color-alto;
 }

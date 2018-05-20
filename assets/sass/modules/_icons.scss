@@ -2,32 +2,25 @@
 // Icons
 //--------------------------------------------------------------
 
-// Social icons <ul>
-.social-icons {
-	@include clearfix;
-	@include list-reset;
+.social-networks {
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	padding: $gutter 0 0;
+	width: 100%;
 
-	// Each icon <li>
-	.social-icon {
+	li {
+		display: inline-block;
+		font-size: 20px;
 
-		// Loop through all social icons
-		@each $social-color, $color in $social-colors {
-
-			// Set styles on those social icons!
-			.icon-#{$social-color} {
-				@include size(30px 30px);
-
-				fill: $color;
-
-				&:hover {
-					fill: lighten($color, 20%);
-				}
-			}
+		&:not(:last-of-type) {
+			margin-right: $gutter * 2;
 		}
 
-		// No margin for the last <li> item
-		&:last-child {
-			margin-right: 0;
+		svg {
+			@include size(24px);
+
+			fill: $color-white;
 		}
 	}
-}
+} // .social-networks

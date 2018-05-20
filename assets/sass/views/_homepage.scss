@@ -1,3 +1,19 @@
 //--------------------------------------------------------------
 // Homepage Template
 //--------------------------------------------------------------
+.recent-post-container {
+	// display: flex;
+
+	.single-post-title {
+		margin: 0;
+	}
+
+	.entry-date p {
+		display: inline-block;
+		margin: 0 12px 0 0;
+	}
+
+	.post-category {
+		display: inline-block;
+	}
+} // recent-post-container

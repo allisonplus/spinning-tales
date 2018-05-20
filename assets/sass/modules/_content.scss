@@ -38,7 +38,8 @@
 }
 
 .edit-link {
-	margin: 0 24px;
+	display: block;
+	margin: 0 24px 0 0;
 }
 
 // Asides
@@ -46,4 +47,8 @@
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
 	display: none;
+}
+
+.cat-links {
+	display: block;
 }

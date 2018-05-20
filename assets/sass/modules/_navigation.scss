@@ -6,6 +6,8 @@
 
 a {
 	color: $color-link;
+	text-decoration: none;
+	transition: color 0.25s linear;
 
 	&:visited {
 		color: $color-link-visited;
@@ -16,7 +18,29 @@ a {
 	&:active {
 		color: $color-link-hover;
 	}
-}
+
+	// Links inside entry-content.
+	.entry-content & {
+		background-image: linear-gradient(to bottom, transparent 0, rgba($turq, 0.3) 0);
+		background-position: 0 16px;
+		background-repeat: no-repeat;
+		color: $void;
+		text-decoration: none;
+		transition: background-position 0.08s ease-out;
+
+		&:hover,
+		&:focus,
+		&:active {
+		    background-image: linear-gradient(transparent 0%, rgba($turq, 0.3) 0%);
+			background-position: 0;
+			height: 15px;
+		}
+	}
+
+	.main-navigation & {
+		color: $color-white;
+	}
+} // a
 
 // Default menu (active after a fresh WordPress install)
 
@@ -126,6 +150,7 @@ a {
 	clear: both;
 	display: none;
 	float: left;
+	z-index: 3;
 
 	@include media($tablet-landscape) {
 		display: block;
