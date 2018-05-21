@@ -32,16 +32,29 @@
 
 .site-content {
 	margin: 20px auto;
+	overflow: hidden;
+	position: relative;
+
+	@include media($tablet-landscape) {
+		padding-left: calc(#{$header} + 4%);
+	}
 
 	@include media($desktop) {
 		margin: 20px auto;
 	}
-}
+} // .site-content
 
 .primary {
 
 	@include media($tablet-landscape) {
-		max-width: calc(100% - 75px);
+		max-width: calc(100% - 100px);
+	}
+
+	.single & {
+
+		@include media($tablet-landscape) {
+			max-width: calc(100% - 100px);
+		}
 	}
 }
 

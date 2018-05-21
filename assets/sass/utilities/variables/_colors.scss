@@ -12,18 +12,18 @@
 //-------------------------------------------------------------
 
 // COLORS
-
-// Primary palette
-$color-primary: #21759b;
-$color-black: #000;
-$color-white: #fff;
-
 $turq: #21d4fd;
 $violet: #b721ff;
 
 $void: #0e0b16;
 $fuchsia: #a239ca;
 $jewel: #4717f6;
+
+// Primary palette
+$color-primary: $jewel;
+$color-black: #000;
+$color-white: #fff;
+
 
 // Grayscale
 $color-gray: #808080;

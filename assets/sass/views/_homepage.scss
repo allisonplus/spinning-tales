@@ -2,10 +2,33 @@
 // Homepage Template
 //--------------------------------------------------------------
 .recent-post-container {
-	// display: flex;
 
-	.single-post-title {
+	&:after {
+		@include size(10% 3px);
+
+		background: linear-gradient(18deg, $void 10%, $violet 55%, $turq 85%);
+		content: "";
+		display: block;
+		margin: 0 auto $gutter * 3;
+	}  // &:after
+
+	.hentry,
+	.single-post-title,
+	p {
 		margin: 0;
+	}
+
+	article {
+		padding: 0 0 16px;
+
+		&:not(:first-of-type) {
+			padding: 16px 0;
+		}
+
+		&:nth-of-type(2) {
+			border-bottom: 0.1rem solid rgba($color-black, 0.15);
+			border-top: 0.1rem solid rgba($color-black, 0.15);
+		}
 	}
 
 	.entry-date p {
@@ -13,7 +36,10 @@
 		margin: 0 12px 0 0;
 	}
 
-	.post-category {
-		display: inline-block;
+	.entry-date {
+		color: rgba($color-black, 0.6);
+		font-size: 15px;
+		font-weight: 600;
+		text-transform: uppercase;
 	}
 } // recent-post-container

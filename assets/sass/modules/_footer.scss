@@ -4,16 +4,11 @@
 .site-footer {
 
 	@include media($tablet-landscape) {
-		padding-left: calc(#{$header} + 2%);
+		padding-left: calc(#{$header} + 4%);
 	}
 }
 
 .site-info {
-	text-align: center;
-
-	@include media($tablet-landscape) {
-		padding-left: calc(#{$header} + 2%);
-	}
 
 	.heart {
 		color: $violet;
@@ -32,11 +27,11 @@
 		text-decoration: none;
 		transition: background-position 0.1s ease-out;
 
-			&:hover,
-			&:focus,
-			&:active {
-			    background-image: linear-gradient(transparent 0%, rgba($violet, 0.3) 0%);
-				background-position: 0;
-			}
+		&:hover,
+		&:focus,
+		&:active {
+		    background-image: linear-gradient(transparent 0%, rgba($violet, 0.3) 0%);
+			background-position: 0;
+		}
 	}
 } // .site-info

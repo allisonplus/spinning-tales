@@ -92,12 +92,12 @@ a {
 
 // Main navigation (after creating a menu in the dashboard)
 .main-navigation {
-	clear: both;
-	float: left;
+	padding: 0 0 $gutter;
 	z-index: 3;
 
 	@include media($tablet-landscape) {
 		display: block;
+		padding: $gutter * 3 0;
 	}
 
 	// Menu area
@@ -143,3 +143,73 @@ a {
 		text-align: right;
 	}
 }
+
+// Nav links.
+.nav-links {
+	display: flex;
+	margin-bottom: $gutter * 2;
+	width: 100%;
+
+	.nav-previous,
+	.nav-next {
+		@include size(50% auto);
+
+		&:hover {
+
+			a:after,
+			a:before {
+				color: $fuchsia;
+			}
+		} // &:hover
+
+		a {
+			vertical-align: middle;
+
+			// Chevrons.
+			&:after,
+			&:before {
+				color: $void;
+				display: inline-block;
+				font-family: FontAwesome;
+				line-height: 1;
+				transition: color 0.25s ease-in-out;
+			}
+		}
+	} // .nav-previous, .nav-next
+
+	// Next Chevron.
+	.nav-next {
+		text-align: right;
+
+		a:after {
+			content: "\f054";
+			margin-left: $gutter;
+		} // &:after
+	} // .nav-next
+
+	// Previous Chevron.
+	.nav-previous {
+
+		a:before {
+			content: "\f053";
+			margin-right: $gutter;
+		}
+	} // .nav-previous
+
+	// Previous/Next Post prefix.
+	.pre-title,
+	.pre-title a {
+		color: rgba($void, 0.75);
+		display: inline-block;
+		font-size: 22px;
+		height: 100%;
+		line-height: 1.3;
+		margin: 0;
+
+		// Actual name of post.
+		.title {
+			color: $void;
+			display: block;
+		}
+	} // .pre-title
+} //.nav-links
