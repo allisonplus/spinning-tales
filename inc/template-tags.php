@@ -29,12 +29,7 @@ if ( ! function_exists( 'cps_posted_on' ) ) :
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
-		$byline = sprintf(
-			esc_html_x( 'by %s', 'post author', 'spin' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-		);
-
-		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 
 	}
 endif;
@@ -55,7 +50,7 @@ if ( ! function_exists( 'cps_entry_footer' ) ) :
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'spin' ) );
 			if ( $tags_list ) {
-							printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'spin' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+							printf( '<span class="tags-links">' . esc_html__( '%1$s', 'spin' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
 
@@ -64,16 +59,6 @@ if ( ! function_exists( 'cps_entry_footer' ) ) :
 			comments_popup_link( esc_html__( 'Leave a comment', 'spin' ), esc_html__( '1 Comment', 'spin' ), esc_html__( '% Comments', 'spin' ) );
 			echo '</span>';
 		}
-
-		edit_post_link(
-			sprintf(
-				/* translators: %s: Name of current post */
-				esc_html__( 'Edit %s', 'spin' ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			),
-			'<span class="edit-link">',
-			'</span>'
-		);
 	}
 endif;
 

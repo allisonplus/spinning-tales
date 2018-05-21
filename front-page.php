@@ -39,7 +39,7 @@ get_header(); ?>
 					 */
 					get_template_part( 'template-parts/content', get_post_format() );
 
-					// cps_show_recent_posts();
+					cps_show_recent_posts();
 
 				endwhile;
 

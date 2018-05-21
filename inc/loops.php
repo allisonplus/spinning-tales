@@ -21,17 +21,9 @@ function cps_show_recent_posts() {
 		<div class="post-info">
 			<h2 class="single-post-title"><a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr( the_title_attribute() ); ?>" rel="bookmark">
 				<?php the_title(); ?></a></h2>
+			<p><?php echo esc_html( cps_get_the_excerpt() ); ?></p>
 			<div class="meta-data">
-				<span class="entry-date"><?php the_date( 'F jS, Y', '<p>', '</p>' ); ?><p>|</p></span>
-				<span class="post-category">
-					<?php
-					$category = get_the_category();
-
-					if ( $category[0] ) {
-						echo '<a href="' . get_category_link( $category[0]->term_id ) . '">' . $category[0]->cat_name . '</a>'; // WPCS: XSS ok.
-					} ?>
-				</span>
-
+				<span class="entry-date"><?php the_date( 'F jS, Y', '<p>', '</p>' ); ?></span>
 			</div> <!--/.meta-data-->
 		</div> <!--/.post-info-->
 
