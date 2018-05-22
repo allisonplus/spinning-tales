@@ -1,0 +1,42 @@
+//--------------------------------------------------------------
+// Blog (Home) Template
+//--------------------------------------------------------------
+.blog {
+
+	.blog-post {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+
+		.feat-img-wrapper {
+			display: flex;
+			// width: 100%;
+		}
+
+		.card-content {
+			width: 78%;
+		}
+	}
+
+	article {
+		padding: 0 0 16px;
+
+		&:not(:first-of-type) {
+			border-top: 0.1rem solid rgba($color-black, 0.15);
+			padding: 16px 0;
+		}
+
+		&:last-of-type {
+			border-bottom: 0.1rem solid rgba($color-black, 0.15);
+			padding-bottom: 24px;
+		}
+
+		.entry-content {
+			margin: 0;
+		}
+	}
+
+	.hentry {
+		margin: 0 0 12px;
+	}
+} // .blog

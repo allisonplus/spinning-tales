@@ -22,6 +22,7 @@
 
 <article <?php post_class( 'blog-post' ); ?>>
 	<div class="feat-img-wrapper">
+		<img src="<?php echo esc_url( cps_featured_fallback( 'thumbnail' ) ); ?>" alt="">
 	</div>
 
 	<div class="card-content">

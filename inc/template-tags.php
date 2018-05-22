@@ -425,3 +425,58 @@ function cps_get_social_links() {
 	<?php
 	return ob_get_clean();
 }
+
+/**
+ * Fallback image for featured <img>.
+ *
+ * @author Allison Tarr
+ * @param   array $size Potential args to pass.
+ */
+function cps_featured_fallback( $size = 'thumbnail' ) {
+
+	// If featured image is present, use that.
+	if ( has_post_thumbnail() ) {
+
+		$featured_image_id = get_post_thumbnail_id( get_the_ID() );
+		$media = wp_get_attachment_image_src( $featured_image_id, $size );
+
+		if ( is_array( $media ) ) {
+			return current( $media );
+		}
+	} else {
+		// Set up default image path.
+		$media_url = get_stylesheet_directory_uri() . '/assets/images/placeholder.png';
+
+		// Get particular category's object info.
+		$cat = get_the_category();
+		$term_id = $cat[0]->term_id;
+		// Get image ID for this field.
+		$term = get_term( $term_id );
+
+		$attachment_id = get_field( 'associated_image', $term );
+
+		// URL of image at specific size.
+		$media = $attachment_id['sizes'][ $size ];
+
+		if ( is_array( $media ) ) {
+			return current( $media );
+		}
+	}
+
+	if ( ! isset( $media ) ) {
+		$media = get_stylesheet_directory_uri() . '/assets/images/placeholder.png';
+	}
+
+	return $media;
+
+	// Parse args.
+	$args = wp_parse_args( $args, $defaults );
+
+	ob_start();
+	?>
+
+	<!-- <img src="<?php echo esc_url( $media ); ?>" alt=""> -->
+
+	<?php
+	return ob_get_clean();
+}
