@@ -447,10 +447,13 @@ function cps_featured_fallback( $size = 'thumbnail' ) {
 		// Set up default image path.
 		$media_url = get_stylesheet_directory_uri() . '/assets/images/placeholder.png';
 
-		// Get particular category's object info.
+		// Retrieves post categories' object outside the loop.
 		$cat = get_the_category();
+
+		// Narrows down to get term ID.
 		$term_id = $cat[0]->term_id;
-		// Get image ID for this field.
+
+		// Get all term data via term ID.
 		$term = get_term( $term_id );
 
 		$attachment_id = get_field( 'associated_image', $term );

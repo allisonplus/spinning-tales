@@ -132,6 +132,11 @@ require get_template_directory() . '/inc/loops.php';
 require get_template_directory() . '/inc/queries.php';
 
 /**
+ * Custom ACF functions for this theme.
+ */
+require get_template_directory() . '/inc/acf.php';
+
+/**
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';

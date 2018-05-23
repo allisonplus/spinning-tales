@@ -21,7 +21,13 @@ function cps_show_recent_posts() {
 		<div class="post-info">
 			<h2 class="single-post-title"><a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr( the_title_attribute() ); ?>" rel="bookmark">
 				<?php the_title(); ?></a></h2>
-			<p><?php echo esc_html( cps_get_the_excerpt() ); ?></p>
+
+				<?php if ( get_field( 'excerpt_visibility' ) === null || get_field( 'excerpt_visibility' ) ) : ?>
+					<p><?php echo esc_html( cps_get_the_excerpt() ); ?></p>
+				<?php else : ?>
+					<!-- Return nada. -->
+				<?php endif; ?>
+
 			<div class="meta-data">
 				<span class="entry-date"><?php the_date( 'F jS, Y', '<p>', '</p>' ); ?></span>
 			</div> <!--/.meta-data-->
