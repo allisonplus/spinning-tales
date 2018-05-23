@@ -28,7 +28,9 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'spin' ); ?></a>
 
-	<header class="site-header">
+	<?php $img = get_field( 'header_background_image', 'options' )['sizes']['large']; ?>
+
+	<header class="site-header" style="background-image: url(<?php echo esc_url( $img ); ?>)">
 		<div class="wrap">
 
 			<div class="site-branding">
