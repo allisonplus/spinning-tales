@@ -478,8 +478,6 @@ function cps_featured_fallback( $size = 'thumbnail' ) {
 	ob_start();
 	?>
 
-	<!-- <img src="<?php echo esc_url( $media ); ?>" alt=""> -->
-
 	<?php
 	return ob_get_clean();
 }

@@ -9,17 +9,6 @@
 
 ?>
 
-<?php
-/**
- * Template part for displaying posts.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package Spin
- */
-
-?>
-
 <article <?php post_class( 'blog-post' ); ?>>
 	<div class="feat-img-wrapper">
 		<img src="<?php echo esc_url( cps_featured_fallback( 'thumbnail' ) ); ?>" alt="">
@@ -46,10 +35,14 @@
 		<div class="entry-content">
 			<?php
 			if ( is_home() ) :
-				echo cps_get_the_excerpt( array( // WPCS: XSS OK.
-					'length' => 40,
-				) );
-			else :
+				if ( get_field( 'excerpt_visibility' ) === null || get_field( 'excerpt_visibility' ) ) :
+					echo cps_get_the_excerpt( array( // WPCS: XSS OK.
+						'length' => 24,
+					) );
+				else : ?>
+					<!-- Return nada. -->
+				<?php endif; ?>
+			<?php else :
 				the_content( sprintf(
 					/* translators: %s: Name of current post. */
 					wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'cps' ), array( 'span' => array( 'class' => array() ) ) ),
