@@ -10,9 +10,6 @@
 ?>
 
 <article <?php post_class( 'blog-post' ); ?>>
-	<div class="feat-img-wrapper">
-		<img src="<?php echo esc_url( cps_featured_fallback( 'thumbnail' ) ); ?>" alt="">
-	</div>
 
 	<div class="card-content">
 		<header class="entry-header">
@@ -21,14 +18,6 @@
 				the_title( '<h1 class="entry-title">', '</h1>' );
 			else :
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			endif;
-
-			// Only show meta data on single post page, not home.php.
-			if ( 'post' === get_post_type() && ! ( is_home() ) ) : ?>
-			<div class="entry-meta">
-				<?php echo cps_single_posted_on(); // WPCS: XSS ok. ?>
-			</div><!-- .entry-meta -->
-			<?php
 			endif; ?>
 		</header><!-- .entry-header -->
 
@@ -41,6 +30,13 @@
 					) );
 				else : ?>
 					<!-- Return nada. -->
+				<?php endif; ?>
+
+				<?php if ( 'post' === get_post_type() ) : ?>
+				<div class="meta-data">
+					<span class="entry-date"><?php the_date( 'F jS, Y', '<p>', '</p>' ); ?></span>
+				</div> <!--/.meta-data-->
+
 				<?php endif; ?>
 			<?php else :
 				the_content( sprintf(
@@ -57,4 +53,8 @@
 			?>
 		</div><!-- .entry-content -->
 	</div><!--.card-content-->
+
+	<div class="feat-img-wrapper">
+		<img src="<?php echo esc_url( cps_featured_fallback( 'featured-blog' ) ); ?>" alt="">
+	</div>
 </article><!-- #post-## -->

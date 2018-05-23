@@ -39,4 +39,16 @@
 	.hentry {
 		margin: 0 0 12px;
 	}
+
+	.entry-date p {
+		display: inline-block;
+		margin: 0 12px 0 0;
+	}
+
+	.entry-date {
+		color: rgba($color-black, 0.6);
+		font-size: 15px;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
 } // .blog
