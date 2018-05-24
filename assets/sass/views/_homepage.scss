@@ -19,6 +19,8 @@
 	}
 
 	article {
+		display: flex;
+		justify-content: space-between;
 		padding: 0 0 16px;
 
 		&:not(:first-of-type) {
@@ -29,6 +31,11 @@
 			border-bottom: 0.1rem solid rgba($color-black, 0.15);
 			border-top: 0.1rem solid rgba($color-black, 0.15);
 		}
+	}
+
+	.post-info {
+		flex: 1;
+		max-width: 75%;
 	}
 
 	.entry-date p {

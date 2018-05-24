@@ -87,14 +87,9 @@ q {
 }
 
 blockquote {
-	background: rgba($turq, 0.08);
 	color: $void;
-	font-style: italic;
-	margin: 1rem auto 2rem;
-	padding: 1rem 1.2rem;
+	padding: 10px;
 	position: relative;
-	text-align: center;
-	width: 75%;
 
 	&:before,
 	&:after {
@@ -107,14 +102,14 @@ blockquote {
 
 	&:before {
 		content: "\f10d";
-		margin-right: $gutter * 2;
+		margin-right: $gutter;
 		right: 100%;
 	}
 
 	&:after {
 		content: "\f10e";
 		left: 100%;
-		margin-left: $gutter * 2;
+		margin-left: $gutter;
 	}
 } // blockquote
 
