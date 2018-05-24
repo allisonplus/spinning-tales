@@ -3,6 +3,7 @@
 //--------------------------------------------------------------
 .recent-post-container {
 
+	// Gradient line.
 	&:after {
 		@include size(10% 3px);
 
@@ -12,12 +13,14 @@
 		margin: 0 auto $gutter * 3;
 	}  // &:after
 
+	// Reset margins.
 	.hentry,
 	.single-post-title,
 	p {
 		margin: 0;
 	}
 
+	// Post.
 	article {
 		display: flex;
 		justify-content: space-between;
@@ -33,20 +36,22 @@
 		}
 	}
 
+	// Title + excerpt (optional).
 	.post-info {
 		flex: 1;
 		max-width: 75%;
 	}
 
-	.entry-date p {
-		display: inline-block;
-		margin: 0 12px 0 0;
-	}
-
+	// Meta-data.
 	.entry-date {
 		color: rgba($color-black, 0.6);
 		font-size: 15px;
 		font-weight: 600;
 		text-transform: uppercase;
+
+		p {
+			display: inline-block;
+			margin: 0 12px 0 0;
+		}
 	}
 } // recent-post-container

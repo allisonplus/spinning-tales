@@ -23,6 +23,9 @@ get_header(); ?>
 					?>
 				</header><!-- .page-header -->
 
+				<div class="loop-container">
+
+
 				<?php
 				/* Start the Loop */
 				while ( have_posts() ) : the_post();
@@ -34,9 +37,11 @@ get_header(); ?>
 					 */
 					get_template_part( 'template-parts/content', 'archive' );
 
-				endwhile;
+				endwhile; ?>
 
-				the_posts_navigation();
+				</div><!--.loop-container-->
+
+				<?php the_posts_navigation();
 
 			else :
 
