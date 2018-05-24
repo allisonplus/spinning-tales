@@ -1,0 +1,107 @@
+//--------------------------------------------------------------
+// Archive
+//--------------------------------------------------------------
+
+.loop-single-post {
+	display: inline-block;
+	font-size: 0;
+	margin-bottom: 0;
+	position: relative;
+	width: calc(100% / 2.1);
+	z-index: 1;
+
+	@include media($tablet-portrait) {
+		margin-bottom: 0;
+		width: calc(100% / 3.1);
+	}
+
+	// Last post in list.
+	&:last-of-type {
+
+		@include media($tablet-portrait) {
+			margin-bottom: 0;
+		}
+	} // &:last-of-type
+
+	&:after {
+		@include position(absolute, 0 0 null null);
+		@include size(100% 100%);
+
+		background-color: rgba($color-black, 0.25);
+		content: "";
+		z-index: 2;
+	} // &:after
+
+	// Post text info.
+	.single-post-title,
+	.entry-meta {
+		z-index: 10;
+	} // .single-post-title, .post-categories, .entry-meta
+
+	// Title.
+	.single-post-title {
+		font-weight: 400;
+		margin: 0;
+
+		a {
+			color: $color-white;
+		} // a
+	} // .single-post-title
+
+	.post-info {
+		@include position(absolute, 20px null null 22px);
+
+		font-size: 14px;
+		z-index: 10;
+
+		@include media($desktop) {
+			@include position(absolute, 80px null null 22px);
+		}
+	} // .post-info
+
+	// Category.
+	.post-category {
+		background: $color-whitesmoke;
+		display: inline-block;
+		margin-bottom: 15px;
+		margin-right: 35px;
+		padding: 0 6px;
+		transform: skew(-20deg);
+
+		@include media($tablet-landscape) {
+			margin-bottom: 10px;
+		}
+
+		// Category link.
+		a {
+			color: $void;
+			display: inline-block;
+			font-size: 14px;
+			letter-spacing: 1.2px;
+			margin-left: rem(8);
+			position: relative;
+			text-transform: uppercase;
+			transform: skew(20deg);
+		} // a
+
+		&:hover {
+			padding-left: 14px;
+			padding-right: 14px;
+			transition: padding 0.3s;
+		} // &:hover
+	} // .post-categories
+
+	// Date.
+	.entry-date {
+		color: $color-white;
+		display: block;
+		letter-spacing: 1.2px;
+		margin-bottom: 10px;
+		text-transform: uppercase;
+
+		p {
+			display: inline-block;
+			margin: 0;
+		} // p
+	} // .entry-meta
+}
