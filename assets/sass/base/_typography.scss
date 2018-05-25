@@ -30,6 +30,11 @@ textarea {
 
 h1,
 .h1 {
+
+	.error-404 & {
+		margin: 0;
+		font-size: 38px;
+	}
 }
 
 h2,
