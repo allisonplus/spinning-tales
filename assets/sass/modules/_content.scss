@@ -72,6 +72,19 @@
 	}
 }
 
+.meta-data {
+	margin-top: $gutter;
+}
+
+.posted-on {
+	display: inline-block;
+	margin: 0;
+}
+
+.meta-content {
+	display: inline-block;
+}
+
 .entry-footer {
 	padding-top: $gutter * 2;
 	text-align: center;

@@ -34,9 +34,8 @@
 
 				<?php if ( 'post' === get_post_type() ) : ?>
 				<div class="meta-data">
-					<span class="entry-date"><?php the_date( 'F jS, Y', '<p>', '</p>' ); ?></span>
+					<?php echo cps_single_posted_on(); // WPCS: XSS OK. ?>
 				</div> <!--/.meta-data-->
-
 				<?php endif; ?>
 			<?php else :
 				the_content( sprintf(

@@ -20,7 +20,8 @@ a {
 	}
 
 	// Links inside entry-content.
-	.entry-content & {
+	.entry-content &,
+	.recent-post-container .meta-data & {
 		background-image: linear-gradient(to bottom, transparent 0, rgba($turq, 0.3) 0);
 		background-position: 0 16px;
 		background-repeat: no-repeat;

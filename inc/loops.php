@@ -32,7 +32,7 @@ function cps_show_recent_posts() {
 				<?php endif; ?>
 
 			<div class="meta-data">
-				<span class="entry-date"><?php the_date( 'F jS, Y', '<p>', '</p>' ); ?></span>
+				<?php echo cps_single_posted_on(); // WPCS: XSS OK. ?>
 			</div> <!--/.meta-data-->
 		</div> <!--/.post-info-->
 
