@@ -41,17 +41,4 @@
 		flex: 1;
 		max-width: 75%;
 	}
-
-	// Meta-data.
-	.entry-date {
-		color: rgba($color-black, 0.6);
-		font-size: 15px;
-		font-weight: 600;
-		text-transform: uppercase;
-
-		p {
-			display: inline-block;
-			margin: 0 12px 0 0;
-		}
-	}
 } // recent-post-container

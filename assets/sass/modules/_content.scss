@@ -59,6 +59,18 @@
 	display: none;
 }
 
+// Meta-data.
+.entry-date {
+	color: rgba($color-black, 0.6);
+	font-size: 15px;
+	font-weight: 600;
+	text-transform: uppercase;
+
+	p {
+		display: inline-block;
+		margin: 0 12px 0 0;
+	}
+}
 
 .entry-footer {
 	padding-top: $gutter * 2;
@@ -78,8 +90,9 @@
 		padding-bottom: $gutter / 2;
 
 		a {
-			background-color: $void;
-			border: 1px solid $void;
+			background-color: $color-link-hover;
+			border: 1px solid $color-link-hover;
+			border-radius: 2px;
 			color: $color-white;
 			padding: 0 $gutter;
 			transition: all 0.1s linear;
@@ -87,8 +100,8 @@
 			&:hover,
 			&:focus,
 			&:active {
-				background-color: $color-link-hover;
-				border: 1px solid $color-link-hover;
+				background-color: $void;
+				border: 1px solid $void;
 			}
 		}
 	} // .cat-links

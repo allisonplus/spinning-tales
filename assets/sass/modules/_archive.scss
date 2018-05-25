@@ -7,23 +7,29 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+		margin-bottom: $gutter * 2;
 	}
 
 	// Post.
 	.loop-single-post {
 		display: inline-block;
 		font-size: 0;
-		margin-bottom: 0;
+		margin-bottom: $gutter;
 		position: relative;
-		width: calc((100% / 2) - 15px );
+		width: 100%;
 		z-index: 1;
 
+		@include media($phone-landscape) {
+			width: calc((100% / 2) - 15px );
+		}
+
 		@include media($tablet-portrait) {
-			margin-bottom: 0;
 			width: calc((100% / 3) - 15px );
 		}
 
+
 		.feat-img-wrapper {
+			max-width: 325px;
 			position: relative;
 
 			// Overlay.
@@ -64,12 +70,19 @@
 
 		// Title, excerpt (optional) + meta data.
 		.post-info {
-			@include position(absolute, 50% null null 50%);
+			@include position(absolute, 50% null null 33%);
 
 			font-size: 14px;
-			width: 90%;
 			transform: translate(-50%, -50%);
+			width: 50%;
 			z-index: 10;
+
+			@include media($tablet-portrait) {
+				@include position(absolute, 50% null null 50%);
+
+				transform: translate(-50%, -50%);
+				width: 90%;
+			}
 		} // .post-info
 
 		// Date.
@@ -84,6 +97,6 @@
 				display: inline-block;
 				margin: 0;
 			} // p
-		} // .entry-meta
+		} // .entry-date
 	}
 } // .archive
