@@ -23,8 +23,13 @@
 	// Post.
 	article {
 		display: flex;
+		flex-direction: column;
 		justify-content: space-between;
 		padding: 0 0 16px;
+
+		@include media($phone-landscape) {
+			flex-direction: row;
+		}
 
 		&:not(:first-of-type) {
 			padding: 16px 0;
@@ -39,6 +44,9 @@
 	// Title + excerpt (optional).
 	.post-info {
 		flex: 1;
-		max-width: 75%;
+
+		@include media($phone-landscape) {
+			max-width: 75%;
+		}
 	}
 } // recent-post-container

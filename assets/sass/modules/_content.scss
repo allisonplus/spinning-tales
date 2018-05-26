@@ -5,7 +5,12 @@
 // Posts and pages
 .entry-title {
 	font-size: 36px;
+	line-height: 1.2;
 	margin: 0;
+
+	@include media($phone-landscape) {
+		line-height: initial;
+	}
 }
 
 .sticky {

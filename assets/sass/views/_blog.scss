@@ -6,14 +6,28 @@
 	.blog-post {
 		align-items: center;
 		display: flex;
+		flex-direction: column;
 		justify-content: space-between;
+
+		@include media($phone-landscape) {
+			flex-direction: row;
+		}
 
 		.feat-img-wrapper {
 			display: flex;
+			margin-top: $gutter * 2;
+
+			@include media($phone-landscape) {
+				margin-top: 0;
+			}
 		}
 
 		.card-content {
-			width: 78%;
+			width: 100%;
+
+			@include media($phone-landscape) {
+				width: 78%;
+			}
 		}
 	}
 
