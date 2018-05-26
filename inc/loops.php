@@ -17,9 +17,8 @@ function cps_show_recent_posts() {
 <?php while ( $recent_posts->have_posts() ) : $recent_posts->the_post(); ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class( 'loop-single-post' ); ?>>
-		<div class="feat-img-wrapper">
-			<img src="<?php echo esc_url( cps_featured_fallback( 'thumbnail' ) ); ?>" alt="">
-		</div>
+		<a class="feat-img-wrapper" href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true" role="presentation">
+			<img src="<?php echo esc_url( cps_featured_fallback( 'thumbnail' ) ); ?>" alt=""></a>
 
 		<div class="post-info">
 			<h2 class="single-post-title"><a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr( the_title_attribute() ); ?>" rel="bookmark">

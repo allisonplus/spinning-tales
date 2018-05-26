@@ -53,7 +53,6 @@
 		</div><!-- .entry-content -->
 	</div><!--.card-content-->
 
-	<div class="feat-img-wrapper">
-		<img src="<?php echo esc_url( cps_featured_fallback( 'featured-blog' ) ); ?>" alt="">
-	</div>
+	<a class="feat-img-wrapper" href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true" role="presentation">
+		<img src="<?php echo esc_url( cps_featured_fallback( 'featured-blog' ) ); ?>" alt=""></a>
 </article><!-- #post-## -->
