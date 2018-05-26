@@ -42,9 +42,14 @@ get_header(); ?>
 							</blockquote>
 						</div><!--.quote-container-->
 
+						<?php
+						if ( has_post_thumbnail() ) : ?>
+
 						<div class="featured-container">
 							<a class="source-title" href="<?php echo esc_url( $link ); ?>"><img class ="featured" src="<?php echo esc_attr( cps_get_post_image_uri( 'book-cover' ) ); ?>" alt="<?php esc_html_e( 'Featured image for ', 'cps' ); ?><?php echo the_title(); ?>"></a>
 						</div><!--.featured-container-->
+
+						<?php endif; ?>
 
 						<footer class="entry-footer">
 							<?php cps_entry_footer(); ?>
