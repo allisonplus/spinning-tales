@@ -46,6 +46,10 @@ get_header(); ?>
 							<a class="source-title" href="<?php echo esc_url( $link ); ?>"><img class ="featured" src="<?php echo esc_attr( cps_get_post_image_uri( 'book-cover' ) ); ?>" alt="<?php esc_html_e( 'Featured image for ', 'cps' ); ?><?php echo the_title(); ?>"></a>
 						</div><!--.featured-container-->
 
+						<footer class="entry-footer">
+							<?php cps_entry_footer(); ?>
+						</footer><!-- .entry-footer -->
+
 						<?php
 							wp_link_pages( array(
 								'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'cps' ),
