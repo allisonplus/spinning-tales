@@ -103,20 +103,21 @@
 		padding-bottom: $gutter / 2;
 
 		a {
-			background-color: $color-link-hover;
-			border: 1px solid $color-link-hover;
-			border-radius: 2px;
-			color: $color-white;
-			padding: 0 $gutter;
-			transition: all 0.1s linear;
+			background-image: linear-gradient(to bottom, transparent 0, rgba($turq, 0.3) 0);
+			background-position: 0 16px;
+			background-repeat: no-repeat;
+			color: $void;
+			text-decoration: none;
+			transition: background-position 0.08s ease-out;
 
 			&:hover,
 			&:focus,
 			&:active {
-				background-color: $void;
-				border: 1px solid $void;
+			    background-image: linear-gradient(transparent 0%, rgba($turq, 0.3) 0%);
+				background-position: 0;
+				height: 15px;
 			}
-		}
+		} // a
 	} // .cat-links
 
 	.tags-links {
