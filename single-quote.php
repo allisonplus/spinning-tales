@@ -33,8 +33,12 @@ get_header(); ?>
 							<h1 class="entry-title"><?php echo esc_html( $subject ); ?></h1>
 						<?php endif; ?>
 
-
-						<span class="author"><cite><?php esc_html_e( 'Source: ', 'cps' ); ?><?php echo esc_html( $author ); ?></cite></span></h1>
+						<?php
+						if ( $link ) : ?>
+							<span class="author"><cite><?php esc_html_e( 'Source: ', 'cps' ); ?><a href="<?php echo esc_url( $link ); ?>"><?php echo esc_html( $author ); ?></a></cite></span>
+						<?php else : ?>
+							<span class="author"><cite><?php esc_html_e( 'Source: ', 'cps' ); ?><?php echo esc_html( $author ); ?></cite></span>
+						<?php endif; ?>
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">
