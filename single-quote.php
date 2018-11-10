@@ -12,6 +12,7 @@
 $title = get_post_meta( $post->ID, 'title', true );
 $author = get_post_meta( $post->ID, 'author', true );
 $link = get_post_meta( $post->ID, 'link', true );
+$subject = get_post_meta( $post->ID, 'subject_matter', true );
 
 get_header(); ?>
 
@@ -24,7 +25,15 @@ get_header(); ?>
 				<article <?php post_class( 'quote-article' ); ?>>
 
 					<header class="entry-header">
-						<h1 class="entry-title"><?php echo esc_html( $title ); ?></h1>
+
+						<?php
+						if ( $title ) : ?>
+							<h1 class="entry-title"><?php echo esc_html( $title ); ?></h1>
+						<?php elseif ( $subject ) :?>
+							<h1 class="entry-title"><?php echo esc_html( $subject ); ?></h1>
+						<?php endif; ?>
+
+
 						<span class="author"><cite><?php esc_html_e( 'Source: ', 'cps' ); ?><?php echo esc_html( $author ); ?></cite></span></h1>
 					</header><!-- .entry-header -->
 
