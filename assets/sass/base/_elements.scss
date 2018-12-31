@@ -27,6 +27,10 @@ figure {
 ul,
 ol {
 	margin: 0 0 28px 24px;
+
+	&.wp-block-gallery {
+		margin-left: 0;
+	}
 }
 
 ul {
