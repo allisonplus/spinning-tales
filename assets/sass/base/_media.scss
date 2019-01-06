@@ -50,6 +50,10 @@ img {
 	}
 }
 
+figcaption {
+	max-width: calc(100% - 20px);
+}
+
 .wp-caption-text {
 	text-align: center;
 }
